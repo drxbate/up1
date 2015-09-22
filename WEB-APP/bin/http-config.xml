@@ -1,0 +1,18 @@
+<uwsgi>
+<!--
+How to install uwsgi:
+sudo apt-get install uwsgi 
+ --> 
+        <plugin>python</plugin>
+        <chdir>/var/apps/up1/WEB-APP</chdir>
+        <pythonpath>/var/apps/up1/WEB-APP</pythonpath>
+        <module>app</module>
+        <callable>app</callable>
+        <protocol>socket</protocol>
+        <socket>/tmp/up1.sock</socket>
+        <master></master>
+        <processes>4</processes>
+        <memory-report/>
+        <pidfile>/tmp/up1.pid</pidfile>
+        <daemonize>/var/log/web-app/up1.log</daemonize>
+</uwsgi>
